@@ -26,8 +26,8 @@ public class Main {
 	}
 
 	public static void addNumbersToList() {
-		// to add between 10 - 20 integers into the array
-		for (int i = 0; i < new Random().nextInt(10) + 10; i++) {
+		// to add between 20 - 30 integers into the array
+		for (int i = 0; i < new Random().nextInt(10) + 20; i++) {
 			// to add a random integer between 0 and 100
 			listOfNumbers.add(new Random().nextInt(100));
 		}
