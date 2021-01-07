@@ -4,9 +4,7 @@ import java.util.*;
 
 public class FindLongestIncreasingSubsequence {
 
-	int[] numbers = { 2, 3, 4, 6, 1, 9, 10, 12, 15, 22, 27, 2, 6 };
-
-	public Integer[] getLongestIncreasingSubsequence() {
+	public Integer[] getLongestIncreasingSubsequence(List<Integer> numbers) {
 
 		// sequences we find
 		List<Integer[]> sequences = new ArrayList<>();
@@ -16,7 +14,8 @@ public class FindLongestIncreasingSubsequence {
 		Stack<Integer> entries = new Stack<>();
 
 		// step through numbers
-		for (int entry : numbers) {
+		for(int i = 0; i < numbers.size(); i++) {
+			Integer entry = numbers.get(i);
 
 			// add the first entry
 			if (entries.empty()) {
@@ -35,7 +34,8 @@ public class FindLongestIncreasingSubsequence {
 			// if the number is decreasing
 			// or if we are at the end
 			// capture the sequence
-			if (previous >= entry) {
+			 boolean atTheEnd = (i == numbers.size() - 1);
+			if (previous >= entry || atTheEnd) {
 
 				// capture the elements we found
 				sequences.add(toArray(entries));
